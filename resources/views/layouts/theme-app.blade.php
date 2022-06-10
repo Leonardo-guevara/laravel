@@ -34,7 +34,7 @@
                         @if (Route::has('login'))
                         {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
                         @auth
-                        <li class="nav-item"><a href="{{ url('/dashboard') }}" class="nav-link px-lg-3 py-3 py-lg-4">Dashboard</a></li>
+                        <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link px-lg-3 py-3 py-lg-4">Dashboard</a></li>
                             @else
                             <li class="nav-item"><a href="{{ route('login') }}"  class="nav-link px-lg-3 py-3 py-lg-4">Log in</a></li>
                                 @if (Route::has('register'))

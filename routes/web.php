@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,8 +30,23 @@ Route::get('/about', function () {
 });
 
 // controladores
-Route::get('/admin', [AdminController::class, 'index'])->name('dashboard');
-Route::get('/post', [AdminController::class, 'post']);
+Route::get('/admin', [AdminController::class, 'index']);
+
+
+// Route::get('/post', [PostController::class,'index']);
+// Route::get('/post/create', [PostController::class,'create']);
+// Route::post('/post', [PostController::class,'store']);
+// Route::get('/post/{post}/edit', [PostController::class,'edit']);
+// Route::get('/post/{post}', [PostController::class,'Show']);
+// Route::path('/post/{post}', [PostController::class,'update']);
+// Route::delete('/post/{post}', [PostController::class,'destroy']);
+
+// Route::resources('post', [PostController::class]);
+Route::resources([
+    // 'photos' => PhotoController::class,
+    'post' => PostController::class,
+]);
+
 
 // dashboard
 Route::get('/dashboard', function () {
